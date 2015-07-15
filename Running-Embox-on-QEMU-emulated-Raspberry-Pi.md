@@ -16,14 +16,17 @@ More information on the patched version of QEMU for emulating RPi can be found a
 * [Raspberry Pi Bare Bones - Testing your operating system (QEMU)](http://wiki.osdev.org/Raspberry_Pi_Bare_Bones#Testing_your_operating_system_.28QEMU.29)
 
 ## Building Embox for QEMU
-One thing to notice about running Embox on QEMU is that, unfortunately, the `raspi` emulation may incorrectly load the kernel binaries at 0x10000 instead of 0x8000. In fact, you try to compile the kernel and run it you will see no output. What you have to do it to modify the `your-embox-dir/templates/arm/raspi/lds.conf` file to use 0x10000 instead of 0x8000.
-
-After that build the kernel using the following commands:
+There is a special `arm/raspi` configuration template for Raspberry Pi. So first of all, preload it with:
 
     make confload-arm/raspi
+
+One thing to notice about running Embox on QEMU is that, unfortunately, the `raspi` emulation may incorrectly load the kernel binaries at 0x10000 instead of 0x8000. In fact, you try to compile the kernel and run it you will see no output. What you have to do it to modify the `conf/lds.conf` file to use 0x10000 instead of 0x8000.
+
+After that build the kernel using the following command:
+
     make
 
 ## Running Embox on QEMU
 Once you have built the kernel you are ready to run it on QEMU. Just type on the command line:
 
-    qemu-system-arm -kernel embox -cpu arm1176 -M raspi -m 256 -no-reboot -serial stdio
+    qemu-system-arm -kernel build/base/bin/embox -cpu arm1176 -M raspi -m 256 -no-reboot -serial stdio
