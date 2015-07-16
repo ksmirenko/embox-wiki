@@ -29,4 +29,4 @@ After that build the kernel using the following command:
 ## Running Embox on QEMU
 Once you have built the kernel you are ready to run it on QEMU. Just type on the command line:
 
-    qemu-system-arm -kernel build/base/bin/embox -cpu arm1176 -M raspi -m 256 -no-reboot -serial stdio
+    qemu-system-arm -kernel your-embox-dir/build/base/bin/embox -cpu arm1176 -M raspi -m 256 -no-reboot -serial stdio
