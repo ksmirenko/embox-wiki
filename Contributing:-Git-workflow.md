@@ -6,7 +6,7 @@ TL; DR
 ------
 We use [GitHub flow](https://guides.github.com/introduction/flow/) for the
 development, which is basically about committing into branches and merging
-through pull requests. **TL; DR**:
+through pull requests.
 
   - Git setup: real name and email; Editors/IDE: proper indentation, auto strip
     [trailing whitespaces](http://codeimpossible.com/2012/04/02/Trailing-whitespace-is-evil-Don-t-commit-evil-into-your-repo-/)
