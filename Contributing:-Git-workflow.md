@@ -2,6 +2,33 @@ This is a complementary article (in addition to the main [contributing
 guide](https://github.com/embox/embox/blob/master/CONTRIBUTING.md)) describing
 the accepted Git workflow step-by-step.
 
+TL; DR
+------
+We use [GitHub flow](https://guides.github.com/introduction/flow/) for the
+development, which is basically about committing into branches and merging
+through pull requests. **TL; DR**:
+
+  - Git setup: real name and email; Editors/IDE: proper indentation, auto strip
+    [trailing whitespaces](http://codeimpossible.com/2012/04/02/Trailing-whitespace-is-evil-Don-t-commit-evil-into-your-repo-/)
+
+  - **Never push to `master`**; start each new feature in a branch:
+    - Branch naming: *`short-name-through-hyphens`*; use *`NNNN-bug-name`*
+      to refer an issue
+    - Within a branch, please keep the history linear, i.e. `rebase` instead
+      of `merge` to keep the branch up-to-date
+
+  - [Atomic](http://www.freshconsulting.com/atomic-commits/) commits;
+    no "oops" commits, [squash](#squash-commits-into-a-single-one) if needed;
+    **Git commit message agreements**
+
+  - Respect those who will review your changes: prepare your branch **before**
+    opening a PR, cleanup commits and rebase to catch-up recent changes
+    from `upstream/master`
+
+  - Do not rebase already published changes and force-push **until review is
+    over**: push `fixup!` commits, then rebase one last time once getting LGTM
+    from maintainers
+
 Before you start
 ----------------
 Make sure to perform the necessary
@@ -171,8 +198,9 @@ and pretend that you made everything correctly right from the beginning.
 
 Few things to note here and to summarize:
 
-  - Unless you really screwed up and maintainers ask you explicitly, **do not
-    rebase during the review process**. It is a rather confusing practice
+  - Unless you really screwed up and maintainers ask you explicitly, do not
+    rebase and force-push **during the review process**. It is a rather
+    confusing practice
 
   - Instead, put some efforts to prepare the branch for review **before** 
     opening a PR, i.e. squash "oops" commits, check against the checklists,
