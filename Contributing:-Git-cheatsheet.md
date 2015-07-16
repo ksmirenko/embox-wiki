@@ -3,20 +3,14 @@ review. We tried to put these together among with commands necessary to make
 things done. Most of them are about *editing* the history by `git rebase` and
 its derivatives.
 
-Be sure to run the following commands after synchronizing your local clone.
-
-    git fetch upstream
-
-  - Or, to fetch *and* update local branches to be able to use `master` instead
-    of `upstream/master` in the commands below:
-
-        git pull --rebase upstream
-
-It is also assumed that you're on your branch:
+It is always assumed that you're currently **on your branch**:
 
     git checkout my-branch
 
-### Linearize the branch
+Also, some operations expect the working directory to be clean. You may
+consider running `git stash` before and `git stash pop` after such ones.
+
+### Linearize the branch and catch-up recent changes from the upstream
 
 `git rebase` is designed to "replay" a set of commits on top of a new "base"
 commit.
@@ -26,6 +20,13 @@ it removes merge commits, if any.
 
 Affects the whole branch, including already published changes, if any:
 
+    git rebase upstream/master
+
+However, this command puts the branch on top of `upstream/master` of your
+local clone, it won't check remotes for new commits. To catch-up these too,
+you also need to fetch them too:
+
+    git fetch upstream
     git rebase upstream/master
 
 ### Fix whitespace errors
