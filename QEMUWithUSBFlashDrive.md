@@ -11,3 +11,5 @@ To create template you should add to x86/qemu following:
 *  include embox.cmd.hw.lsusb.lsusb
 *  include embox.cmd.usb_whitelist
 
+To format usb-drive use command:
+> sudo mkfs.msdos -n EmboxFAT -F 12 /dev/sdb 65536 -I
