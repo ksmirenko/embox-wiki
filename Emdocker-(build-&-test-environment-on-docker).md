@@ -6,7 +6,7 @@ Build & test environment on docker. Allows (or should allow :-)) to setup fully 
 * Open terminal, change directory to embox project root.
 * Start docker container with 
 ```
-$ docker run -d -v $PWD:/embox -P --privileged emdocker
+$ docker run -d -v $PWD:/embox -P --privileged embox/emdocker
 ```
 * Try to execute command in container
 ```     
