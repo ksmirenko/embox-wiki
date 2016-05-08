@@ -34,7 +34,7 @@ $ dr make
 $ dr ./scripts/qemu/auto_qemu -s -S
 ```
 ### gdb
-Few notes on gdb (client). Bare `dr gdb` will not work all the time, because this will handle signal wrong way, closing the container wrapper instead of signaling to gdb. Particullary, `Ctrl+C` will not interrupt application and invoke gdb REPL).
+Few notes on gdb (client). Bare `dr gdb` will not work all the time, because this will handle signal wrong way, closing the container wrapper instead of signaling to gdb. Particullary, `Ctrl+C` will not interrupt application and invoke gdb REPL.
 
 To fix this, `./scripts/docker/gdbhostwrapper` introduced to passthrough singals to gdb running in container. Just use it as gdb starter script on host computer, from any environment like shell or Eclipse.
 
@@ -49,3 +49,9 @@ Support includes:
 
 * `docker-run` make build target used to build embox (depends on  `docker_run.sh`)
 * `qemu_on_docker` debugging target used to debug embox on qemu, which runs in container. Target have `gdbhostwrapper` specified as a debugger, as Eclipse use gdb as debugger backend and sends signals too (refer to gdb section for details)
+
+### Accessing embox network services
+
+For simple CLI network access to embox one can type `dr bash` and get container's bash session. There embox is accessible as usual (`ping 10.0.2.16`, `curl 10.0.2.16:80`)
+
+To access embox services from host, you should know host running the container. On linux, this is `localhost`. On MacOS/Windows with classic Docker, type `docker-machine ip` and get host's ip. Then use this ip address and port (10000 + embox_port) to access the service. For example `localhost:10080` on linux will be redirected embox's port 80.
