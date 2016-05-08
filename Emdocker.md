@@ -1,11 +1,16 @@
 # Emdocker
 Build & test environment on docker. Allows to setup fully working development environment in one command.
 
-## Install
+## Setup
 
-Just install docker.  Please refer to docker official installation instructions.
-* Linux: https://docs.docker.com/linux/step_one/
-* MacOS: https://docs.docker.com/mac/step_one/
+* Install docker.  Please refer to docker official installation instructions.
+ * Linux: https://docs.docker.com/linux/step_one/
+ * MacOS: https://docs.docker.com/mac/step_one/
+
+* Pull emdocker image
+```
+$ docker pull embox/emdocker
+```
 
 ## Using
 
