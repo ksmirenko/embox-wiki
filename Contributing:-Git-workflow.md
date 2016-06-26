@@ -19,7 +19,7 @@ through pull requests.
 
   - [Atomic](http://www.freshconsulting.com/atomic-commits/) commits;
     no "oops" commits, [squash](#squash-commits-into-a-single-one) if needed;
-    **Git commit message agreements**
+    **[Git commit message agreements](https://github.com/embox/embox/wiki/Contributing:-Git-commit-message-agreements)**
 
   - Respect those who will review your changes: prepare your branch **before**
     opening a PR, cleanup commits and rebase to catch-up recent changes
@@ -40,8 +40,6 @@ git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 
 Please use **your real name** (no nicknames, sorry).
-
-There is also a recommended setup, please see [below](#recommended-setup).
 
 Clone the repository
 ----------------------
@@ -143,8 +141,8 @@ review your changes would really appreciate that.
   - Quite often, especially when developing something from scratch,
     you'll only need a single commit: add a new driver, fix a crash, etc.
 
-Please also refer to the [checklists](#checklists) and the
-[cheatsheet](#cheatsheet) below.
+Please also refer to the [checklists](https://github.com/embox/embox/wiki/Contributing:-PR-checklist) and the
+[cheatsheet](https://github.com/embox/embox/wiki/Contributing:-Git-cheatsheet).
 
 Then just do it:
 
