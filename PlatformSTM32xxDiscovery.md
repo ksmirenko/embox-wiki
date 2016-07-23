@@ -14,7 +14,7 @@ The board has integrated debugger that allows to program it with single USB-A-US
  * Load Embox with usual gdb commands
 
  ```
- $ gdb build/base/bin/embox
+ $ gdb-multiarch build/base/bin/embox
  (gdb) target extended-remote :3333
  (gdb) monitor halt
  (gdb) load
