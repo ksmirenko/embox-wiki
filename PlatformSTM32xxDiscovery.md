@@ -22,3 +22,4 @@ The board has integrated debugger that allows to program it with single USB-A-US
  ```
 
 N.B. Invoking host `gdb` should be enough for loading embox firmware but for real debuging `gdb-multiarch` (Ubuntu) or `arm-none-eabi-gdb` (Debian, Arch) are required.
+N.B. You can invoke `openocd` without `sudo` when you are in `plugdev` group.
