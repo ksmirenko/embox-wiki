@@ -7,6 +7,7 @@ Build & test environment on docker. Allows to setup fully working development en
  * Linux: https://docs.docker.com/linux/step_one/
  * MacOS: https://docs.docker.com/mac/step_one/
  * Windos: https://docs.docker.com/windows/step_one/
+ * FreeBSD: https://wiki.freebsd.org/Docker
 
 * Pull emdocker image
 ```
