@@ -1,6 +1,8 @@
 # Emdocker
 Build & test environment on docker. Allows to setup fully working development environment in one command.
 
+Specific instructions for Mac can be found [here](Emdocker-on-Mac.md).
+
 ## Setup
 
 * Install docker.  Please refer to docker official installation instructions.
